@@ -1,0 +1,213 @@
+---
+import {Image} from 'astro:assets'
+import unholyUniversity from "../img/unholy_university_cover.jpg"
+import unholyMedicine from "../img/unholy_medicine_ebook_cover_b.jpg"
+---
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="generator" content={Astro.generator}/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* tinos-regular - latin */
+        @font-face {
+            font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+            font-family: 'Tinos';
+            font-style: normal;
+            font-weight: 400;
+            src: url('../fonts/tinos-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        }
+        /* tinos-italic - latin */
+        @font-face {
+            font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+            font-family: 'Tinos';
+            font-style: italic;
+            font-weight: 400;
+            src: url('/public/fonts/tinos/files/tinos-v24-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        }
+        @font-face {
+            font-family: Tinos;
+            src: url("/public/fonts/tinos/files/tinos-latin-400-normal.woff2");
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: Tinos;
+            src: url("/public/fonts/tinos/files/tinos-latin-700-normal.woff2");
+            font-weight: 700;
+        }
+        .container {
+            display: grid;
+            width: 80%;
+            gap: 1em;
+            grid-template-columns: repeat(1, 1fr);
+            grid-auto-rows: auto;
+            margin: auto;
+            font-family: Tinos, sans-serif;
+        }
+        .header {
+            display: grid;
+            grid-template-columns: 1fr;
+            color: white;
+            text-align: center;
+            background-image: linear-gradient(45deg, rgb(240, 99, 99) 0%, rgb(240, 99, 99) 11%, rgb(230, 115, 107) 11%, rgb(230, 115, 107) 24%, rgb(220, 132, 114) 24%, rgb(220, 132, 114) 29%, rgb(210, 148, 122) 29%, rgb(210, 148, 122) 45%, rgb(199, 164, 129) 45%, rgb(199, 164, 129) 87%, rgb(189, 181, 137) 87%, rgb(189, 181, 137) 90%, rgb(179, 197, 144) 90%, rgb(179, 197, 144) 100%), linear-gradient(67.5deg, rgb(240, 99, 99) 0%, rgb(240, 99, 99) 11%, rgb(230, 115, 107) 11%, rgb(230, 115, 107) 24%, rgb(220, 132, 114) 24%, rgb(220, 132, 114) 29%, rgb(210, 148, 122) 29%, rgb(210, 148, 122) 45%, rgb(199, 164, 129) 45%, rgb(199, 164, 129) 87%, rgb(189, 181, 137) 87%, rgb(189, 181, 137) 90%, rgb(179, 197, 144) 90%, rgb(179, 197, 144) 100%), linear-gradient(135deg, rgb(240, 99, 99) 0%, rgb(240, 99, 99) 11%, rgb(230, 115, 107) 11%, rgb(230, 115, 107) 24%, rgb(220, 132, 114) 24%, rgb(220, 132, 114) 29%, rgb(210, 148, 122) 29%, rgb(210, 148, 122) 45%, rgb(199, 164, 129) 45%, rgb(199, 164, 129) 87%, rgb(189, 181, 137) 87%, rgb(189, 181, 137) 90%, rgb(179, 197, 144) 90%, rgb(179, 197, 144) 100%), linear-gradient(90deg, rgb(156, 174, 7), rgb(129, 53, 44));
+            background-blend-mode: overlay, overlay, overlay, normal;
+            margin-bottom: 2em;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+        }
+        .my_img {
+            height: auto;
+            max-width: 80%;
+            aspect-ratio: 6/9;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+            margin-bottom: 1em;
+        }
+        .img {
+            display: grid;
+            grid-template-rows: min-content min-content;
+            justify-items: center;
+        }
+        .book_description {
+            color: dimgrey;
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+        .book_description h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: .5em;
+        }
+        .book_description p {
+            font-size: 1em;
+            margin-bottom: .3em;
+        }
+        footer {
+            font-family: Tinos, sans-serif;
+            font-style: italic;
+            font-weight: 400;
+            margin-bottom: 2em;
+        }
+        @media screen and (min-width: 676px) {
+            .container {
+                display: grid;
+                width: 80%;
+                grid-template-columns: 1fr 1.5fr;
+                margin: auto;
+                font-family: Tinos;
+            }
+            .header {
+                display: grid;
+                grid-area: 1 / 1 / 1 / 3;
+                color: white;
+                height: 100px;
+            }
+            .announce {
+                display: grid;
+                grid-area: 2 / 1 / 3 / 3;
+                font-size: 3em;
+                font-family: Tinos, serif;
+                font-weight: 700;
+                justify-items: center;
+                color: dimgrey;
+                letter-spacing: .05em;
+            }
+            footer {
+                display: grid;
+                grid-area: 3 / 1/ 4 / 3;
+                font-family: Tinos, sans-serif;
+                font-style: italic;
+                font-weight: 400;
+                font-size: 1em;
+                justify-content: center;
+                padding: 1em;
+                margin-top: 1em;
+                margin-bottom: 2em;
+            }
+        }
+    </style>
+    <title>Tod Westcott</title>
+</head>
+<body>
+<div class="header">
+    <h1 class="logo">Tod Westcott</h1>
+</div>
+<div class="container">
+    <div class="img">
+        <Image src={unholyMedicine} alt="cover for Unholy Medicine" class="my_img"></Image>
+        <a href="https://www.amazon.com/Unholy-Medicine-Tod-Westcott-ebook/dp/B0C5ZJ2P6B/ref=sr_1_6?crid=1YLGI7GRK3HD3&keywords=unholy+medicine&qid=1696210332&sprefix=%2Caps%2C136&sr=8-6">
+            <button>Buy on Amazon</button>
+        </a>
+    </div>
+    <div class="book_description">
+        <h1>Unholy Medicine</h1>
+        <p>When billions in profits are at stake, people lie to get them. That’s what biotech firm Gentra and a
+           partnering research hospital did.</p>
+        <p>Gentra hoped it had a new cancer cure. The initial trial reaped a batch of complete remissions. Ecstatic,
+           Gentra prepared to market their chemotherapy treatment nationwide, at a cool half million per treatment.</p>
+        <p>But Dr. Timothy Carrol, the oncologist overseeing the trial, discovered Gentra's chemo had not caused the
+           miraculous cures. The cures happened through an attending nurse, Nurse Rosemary, who prayed with patients who
+           asked her to join them in healing prayer.</p>
+        <p>When Gentra's hospital partner learned about Nurse Rosemary, they fired her. They couldn’t risk a Bible
+           believing nurse receiving credit for cures they attributed to the chemo protocol.
+        <p>
+        <p>As a lifelong atheist, Dr. Carrol’s instinct was to take the hospital’s side. In material terms, he had
+           everything he could want. A glamorous wife. A palatial home backed up to the city’s most prestigious golf
+           course. A five-car garage filled with luxury automobiles. The approval of his world-renowned heart-surgeon
+           father.</p>
+        <p> His riches would rocket if he kept his mouth shut and went along with the lie that Gentra's chemo caused the
+            cancer cures. So, at first, he did not come to Nurse Rosemary’s defense.</p>
+        <p> But one horrifying night in the emergency room, Jesus appeared before Dr. Carrol and opened his eyes. He saw
+            that demonic powers caused many diseases. And, in that moment, Jesus gave Dr. Carrol the gift of healing. On
+            the spot, he healed a cancer patient by laying on hands and calling on the name of Jesus.</p>
+        <p> Dr. Carrol was forever changed. A change that cost him everything. But what he lost in the worldly realm, he
+            gained in the spiritual realm. He teamed up with Nurse Rosemary and prayer warrior Pastor Jacob. With them,
+            he learned the truth of what Paul wrote: “Our struggle is not against flesh and blood, but against the
+            rulers, authorities, powers, and spiritual forces of evil in the heavenly realms.”</p>
+    </div>
+    <div class="img">
+        <Image src={unholyUniversity} alt="cover for Unholy Medicine" class="my_img"></Image>
+        <a href="https://www.amazon.com/Unholy-University-Tod-Westcott-ebook/dp/B0B9KJGR25/ref=sr_1_1?crid=3IMAEDU8R5CAN&keywords=unholy+university&qid=1696210677&sprefix=unholy+university%2Caps%2C103&sr=8-1">
+            <button>Buy on Amazon</button>
+        </a>
+    </div>
+    <div class="book_description">
+        <h1 class="book_description">Unholy University</h1>
+        <p>
+            What would you do if you were a professor of evolution and Jesus showed you the truth of God’s creation?
+            That’s what happened to Professor Ryan Wood in a near death experience. He was awestruck.</p>
+        <p> Before Jesus' intervention, Professor Wood was a hard core atheist. He abused his teaching position to
+            obliterate belief in Jesus Christ. His best-selling books on atheism won him guest appearances on cable news
+            and TV morning shows. But after Jesus appeared to him, he was eager to reveal the truth. As a renowned
+            scientist, Professor Wood was used to the public treating his words as gospel. He expected his revelation
+            that God is the creator of life to be received as breaking news. He was so wrong.</p>
+        <p> The networks banned him from future appearances. The students who flocked to his classes mocked him and
+            walked out. His university schemed to defraud him of his tenure and run him off campus.</p>
+        <p> Ryan Wood would not slip away without a fight. Jesus also showed him that his aggressive atheism handed
+            unwary students over to the soul-destroying evils of Satan. He was desperate to win those souls back for
+            Jesus, and to break the university’s cancel-Christ agenda dictating the university curriculum.</p>
+        <p> But he could not win the battle alone. He found a surprise ally in Elizabeth Williams, a courageous,
+            believing student. The two together exposed a system that would resort to murder to keep its grip on
+            power.</p>
+        <p> Unholy University is a true-to-life novel revealing how the university attacks and suppresses Christian
+            belief. </p>
+    </div>
+    <footer>
+        <div>Jesus Christ is real. He walked this earth 2000 years ago. He was crucified. He was raised with mighty
+             power from the dead by God the Father. He is eternally alive today. He is waiting for you to join him in
+             the glory of God's creation. Jesus is the pinnacle of the creation: King of kings; Lord of lords. By
+             opening your heart in love to him, he relates to you as your eternally loving brother. You bring yourself
+             into the truth of what this creation we live in is all about. And your greatest adventure begins.
+        </div>
+    </footer>
+</div>
+</body>
+</html>
